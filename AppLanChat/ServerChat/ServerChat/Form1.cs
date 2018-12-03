@@ -11,65 +11,22 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppLanChat
+namespace ServerChat
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            this.InitLogin();
-            panelChatClient.Hide();
             CheckForIllegalCrossThreadCalls = false;
-            threadReceive = new Thread(new ThreadStart(ReceivedByClient));
+            threadReceive = new Thread(new ThreadStart(ReceivedByServer));
             threadReceive.Start();
-
-
-        }
-       
-        private void InitLogin()
-        {
-            Panel panelLogin = new Panel();            
-            TextBox txtUserName = new TextBox();
-            TextBox txtPassword = new TextBox();
-            Label labelUsername = new Label();
-            Label labelPassword = new Label();
-            Button btnLogin = new Button();
-            panelLogin.Controls.Add(txtUserName);
-            panelLogin.Controls.Add(txtPassword);
-            panelLogin.Controls.Add(labelUsername);
-            panelLogin.Controls.Add(labelPassword);
-            panelLogin.Controls.Add(btnLogin);
-
-            panelLogin.Size = new Size(200, 200);
-            panelLogin.Location = new Point(50, 50);
-           
-            panelLogin.BorderStyle = BorderStyle.FixedSingle;
-
-            labelUsername.Text = "UserName";
-            labelUsername.Location = new Point(2, 20);
-            txtUserName.Location = new Point(70, 20);
-
-
-
-
-
-            labelPassword.Text = "Password";
-            labelPassword.Location = new Point(2, 60);
-            txtPassword.Location = new Point(70,60);
-            txtPassword.PasswordChar = '*';
-
-            btnLogin.Text = "Login";
-            btnLogin.Location = new Point(70, 100);
-            btnLogin.Click += new EventHandler(btnLogin_Click);
-            this.Controls.Add(panelLogin);
-
         }
         Thread threadReceive;
-        public void ReceivedByClient()
+        void ReceivedByServer()
         {
             Socket socketReceive = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            int portReceive = 40001;
+            int portReceive = 40000;
             IPEndPoint iPEndPointReceive = new IPEndPoint(IPAddress.Parse("127.0.0.1"), portReceive);
             socketReceive.Bind(iPEndPointReceive);
             socketReceive.Listen(10);
@@ -82,7 +39,7 @@ namespace AppLanChat
                     byte[] messageReceivedByServer = new byte[100];
                     int sizeOfReceivedMessage = temp.Receive(messageReceivedByServer, SocketFlags.None);
                     string str = Encoding.ASCII.GetString(messageReceivedByServer);
-                    txtShowMessage.Text += "\r\nServer: " + str;
+                    txtShow.Text += "\r\nClient: " + str;
                 }
                 catch (Exception ex)
                 {
@@ -95,26 +52,20 @@ namespace AppLanChat
                 }
             }
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void buttonSend_Click(object sender, EventArgs e)
         {
-            
-            panelChatClient.Show();
-        }
-
-        private void btnSent_Click(object sender, EventArgs e)
-        {
-            int portSend = 40000;
+            int portSend = 40001;
             IPEndPoint iPEndPointSend = new IPEndPoint(IPAddress.Parse("127.0.0.1"), portSend);
             Socket socketSend = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            string messageTextBox = txtMessage.Text;
-            byte[] messageSentFromClient;
+            string messageTextBox = textBoxMessage.Text;
+            byte[] messageSentFromServer;
             try
             {
                 socketSend.Connect(iPEndPointSend);
-                messageSentFromClient = Encoding.ASCII.GetBytes(messageTextBox);
-                socketSend.Send(messageSentFromClient, SocketFlags.None);
-                txtShowMessage.Text += "\r\nClient: " + messageTextBox;
-                txtMessage.Text = null;
+                messageSentFromServer = Encoding.ASCII.GetBytes(messageTextBox);
+                socketSend.Send(messageSentFromServer, SocketFlags.None);
+                txtShow.Text += "\r\nServer: " + messageTextBox;
+                textBoxMessage.Text = null;
             }
             catch (Exception ex)
             {

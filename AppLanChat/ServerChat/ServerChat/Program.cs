@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppLanChat
+namespace ServerChat
 {
     static class Program
     {
@@ -18,7 +18,5 @@ namespace AppLanChat
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-
-        
     }
 }

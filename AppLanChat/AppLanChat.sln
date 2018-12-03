@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLanChat", "AppLanChat\AppLanChat.csproj", "{8535D4AF-BAB2-4926-AE5D-593800E94E3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLanChatClient", "AppLanChat\AppLanChatClient.csproj", "{8535D4AF-BAB2-4926-AE5D-593800E94E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLanChatServer", "AppLanChatServer\AppLanChatServer.csproj", "{82D0E730-79D5-4B69-853C-0C06F1763458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8535D4AF-BAB2-4926-AE5D-593800E94E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8535D4AF-BAB2-4926-AE5D-593800E94E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8535D4AF-BAB2-4926-AE5D-593800E94E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D0E730-79D5-4B69-853C-0C06F1763458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D0E730-79D5-4B69-853C-0C06F1763458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D0E730-79D5-4B69-853C-0C06F1763458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D0E730-79D5-4B69-853C-0C06F1763458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

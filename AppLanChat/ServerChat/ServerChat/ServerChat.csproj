@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8535D4AF-BAB2-4926-AE5D-593800E94E3D}</ProjectGuid>
+    <ProjectGuid>{62524B7C-EB59-499A-BEB4-820F897FD648}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AppLanChat</RootNamespace>
-    <AssemblyName>AppLanChat</AssemblyName>
+    <RootNamespace>ServerChat</RootNamespace>
+    <AssemblyName>ServerChat</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
