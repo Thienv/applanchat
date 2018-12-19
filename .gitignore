@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Server/ChatServer/ChatServer/bin/Debug
+/LanChat_Sang_Thien/Client/obj/Debug
+/LanChat_Sang_Thien/Client/bin/Debug
+/LanChat_Sang_Thien/Server/bin/Debug
+/LanChat_Sang_Thien/Server/obj/Debug
