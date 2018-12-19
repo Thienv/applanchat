@@ -33,7 +33,7 @@ namespace Client
 
         private readonly PrivateChatForm pChat;
 
-        /*public void _client_Received(ClientSettings cs, string received)
+        public void _client_Received(ClientSettings cs, string received)
         {
             var cmd = received.Split('|');
             switch (cmd[0])
@@ -80,7 +80,7 @@ namespace Client
                     Application.Exit();
                     break;
             }
-        }*/
+        }
 
         private void txtReceive_TextChanged(object sender, EventArgs e)
         {
