@@ -19,7 +19,7 @@ namespace Server
 
         public Listener(int port)
         {
-            this.Port = port;
+            Port = port;
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 

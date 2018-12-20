@@ -17,23 +17,22 @@ namespace Client
             pChat = new PrivateChatForm(this);
             InitializeComponent();
         }
+
+        private void PublicChatForm_Load(object sender, EventArgs e)
+        {
+
+        }
         public readonly LoginForm formLogin = new LoginForm();
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            //formLogin.Client.Received += _client_Received;
+            formLogin.Client.Received += _client_Received;
             formLogin.Client.Disconnected += Client_Disconnected;
             Text = "TCP Chat - " + formLogin.txtIP.Text + " - (Connected as: " + formLogin.txtNickname.Text + ")";
             formLogin.ShowDialog();
         }
-        private static void Client_Disconnected(ClientSettings cs)
-        {
-
-        }
-
         private readonly PrivateChatForm pChat;
-
-        /*public void _client_Received(ClientSettings cs, string received)
+        public void _client_Received(ClientSettings cs, string received)
         {
             var cmd = received.Split('|');
             switch (cmd[0])
@@ -80,17 +79,8 @@ namespace Client
                     Application.Exit();
                     break;
             }
-        }*/
-
-        private void txtReceive_TextChanged(object sender, EventArgs e)
-        {
-            txtReceive.SelectionStart = txtReceive.TextLength;
         }
 
-        private void privateChat_Click(object sender, EventArgs e)
-        {
-            formLogin.Client.Send("pChat|" + formLogin.txtNickname.Text);
-        }
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (txtInput.Text != string.Empty)
@@ -100,15 +90,12 @@ namespace Client
                 txtInput.Text = string.Empty;
             }
         }
-
-        private void menu_Opening(object sender, CancelEventArgs e)
+        private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void txtInput_TextChanged(object sender, EventArgs e)
-        {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSend.PerformClick();
+            }
         }
 
         private void userList_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,14 +103,32 @@ namespace Client
 
         }
 
-        
-
-        private void txtInput_KeyDown(object sender, KeyEventArgs e)
+        private void menu_Opening(object sender, CancelEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSend.PerformClick();
-            }
+
+        }
+
+        private void txtReceive_TextChanged(object sender, EventArgs e)
+        {
+            txtReceive.SelectionStart = txtReceive.TextLength;
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void privateChat_Click(object sender, EventArgs e)
+        {
+            formLogin.Client.Send("pChat|" + formLogin.txtNickname.Text);
+        }
+        private static void Client_Disconnected(ClientSettings cs)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

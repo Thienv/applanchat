@@ -69,7 +69,6 @@
             this.label2.Size = new System.Drawing.Size(159, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Enter Server IP Address:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnConnect
             // 
@@ -81,7 +80,7 @@
             this.btnConnect.TabIndex = 7;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click_1);
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // txtNickname
             // 
@@ -92,7 +91,7 @@
             this.txtNickname.TabIndex = 6;
             this.txtNickname.Text = "user01";
             this.txtNickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNickname.TextChanged += new System.EventHandler(this.txtNickname_TextChanged_1);
+            this.txtNickname.TextChanged += new System.EventHandler(this.txtNickname_TextChanged);
             // 
             // label1
             // 
@@ -103,7 +102,6 @@
             this.label1.Size = new System.Drawing.Size(137, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Choose a Nickname:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginForm
             // 
