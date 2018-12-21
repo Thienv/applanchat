@@ -132,11 +132,6 @@ namespace Server
             listener.Stop();
         }
 
-        private void clientList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (txtInput.Text != string.Empty)
@@ -172,6 +167,15 @@ namespace Server
                 btnSend.PerformClick();
             }
         }
-       
+        private void menu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

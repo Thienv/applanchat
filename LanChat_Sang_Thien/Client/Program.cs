@@ -16,7 +16,7 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new PublicChatForm());
         }
         public static void Invoke(this Control control, Action action)
         {

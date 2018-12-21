@@ -13,18 +13,30 @@ namespace Client
             InitializeComponent();
         }       
 
-        private void Client_Connected(object sender, EventArgs e)
-        {
-            this.Invoke(Close);
-        }          
+                 
 
-        private void btnConnect_Click_1(object sender, EventArgs e)
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             Client.Connected += Client_Connected;
             Client.Connect(txtIP.Text, 2014);
             Client.Send("Connect|" + txtNickname.Text + "|connected");
         }
 
-      
+        private void Client_Connected(object sender, EventArgs e)
+        {
+            this.Invoke(Close);
+        }
+
+        private void txtNickname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
