@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(494, 392);
             this.Controls.Add(this.panel1);
             this.Name = "PrivateChatForm";
-            this.Text = "PrivateChatForm";
+            this.Text = "Private Chat - Client";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

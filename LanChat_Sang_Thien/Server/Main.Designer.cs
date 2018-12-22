@@ -60,6 +60,7 @@ namespace Server
             this.clientList.TabIndex = 0;
             this.clientList.UseCompatibleStateImageBehavior = false;
             this.clientList.View = System.Windows.Forms.View.Details;
+            this.clientList.SelectedIndexChanged += new System.EventHandler(this.clientList_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

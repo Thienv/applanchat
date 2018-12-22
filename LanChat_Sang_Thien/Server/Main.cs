@@ -74,6 +74,7 @@ namespace Server
                 }
             });
         }
+        
 
         private void client_Received(Client sender, byte[] data)
         {
@@ -174,8 +175,12 @@ namespace Server
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+           
         }
 
+        private void clientList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -124,7 +124,7 @@
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.panel1);
             this.Name = "PublicChatForm";
-            this.Text = "PublicChatForm";
+            this.Text = "Public Chat";
             this.Load += new System.EventHandler(this.PublicChatForm_Load);
             this.menu.ResumeLayout(false);
             this.ResumeLayout(false);

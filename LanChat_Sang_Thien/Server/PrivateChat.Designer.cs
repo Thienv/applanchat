@@ -45,23 +45,23 @@
             this.txtReceive.Size = new System.Drawing.Size(383, 279);
             this.txtReceive.TabIndex = 5;
             this.txtReceive.Text = "";
+            this.txtReceive.TextChanged += new System.EventHandler(this.txtReceive_TextChanged);
             // 
             // txtInput
             // 
             this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInput.Location = new System.Drawing.Point(12, 309);
+            this.txtInput.Location = new System.Drawing.Point(13, 297);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(286, 44);
             this.txtInput.TabIndex = 6;
-            this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             // 
             // btnSend
             // 
             this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(317, 309);
+            this.btnSend.Location = new System.Drawing.Point(304, 297);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(91, 44);
             this.btnSend.TabIndex = 7;
@@ -73,12 +73,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(408, 357);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.txtReceive);
             this.Name = "PrivateChat";
-            this.Text = "PrivateChat";
+            this.Text = "Private Chat - Server";
             this.ResumeLayout(false);
             this.PerformLayout();
 

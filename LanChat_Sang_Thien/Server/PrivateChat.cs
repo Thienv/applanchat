@@ -16,7 +16,7 @@ namespace Server
         public PrivateChat(Main main)
         {
             InitializeComponent();
-            this.Main = main;
+            Main = main;
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -32,17 +32,17 @@ namespace Server
             }
         }
 
-        private void txtInput_TextChanged(object sender, EventArgs e)
-        {
-            txtReceive.SelectionStart = txtReceive.TextLength;
-        }
-
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnSend.PerformClick();
             }
+        }
+
+        private void txtReceive_TextChanged(object sender, EventArgs e)
+        {
+            txtReceive.SelectionStart = txtReceive.TextLength;
         }
     }
 }
