@@ -29,6 +29,7 @@ namespace Client
         private void txtReceive_TextChanged(object sender, EventArgs e)
         {
             txtReceive.SelectionStart = txtReceive.TextLength;
+            
         }
 
         private void txtInput_TextChanged(object sender, EventArgs e)

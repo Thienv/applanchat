@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +23,13 @@ namespace Server
 
         public void BroadcastData(string data)
         {
-            foreach(var socket in clients)
+            foreach (var socket in clients)
             {
                 try
                 {
                     socket.Send(Encoding.ASCII.GetBytes(data));
                 }
-                catch(Exception)
+                catch (Exception)
                 {
 
                 }
@@ -39,6 +41,7 @@ namespace Server
             InitializeComponent();
             listener = new Listener(2014);
             listener.SocketAccepted += listener_SocketAccepted;
+            Server.receivedPath = "";
         }
 
         private void listener_SocketAccepted(Socket e)
@@ -74,7 +77,7 @@ namespace Server
                 }
             });
         }
-        
+
 
         private void client_Received(Client sender, byte[] data)
         {
@@ -175,12 +178,76 @@ namespace Server
 
         private void txtInput_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void clientList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fd = new FolderBrowserDialog();
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Server.receivedPath = fd.SelectedPath;
+            }
+        }
+        Server obj = new Server();
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            obj.StartServer();
+        }
+        class Server
+        {
+            IPEndPoint ipEnd;
+            Socket sock;
+            public Server()
+            {
+                ipEnd = new IPEndPoint(IPAddress.Any, 5656);
+                sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
+                sock.Bind(ipEnd);
+            }
+            public static string receivedPath;
+            public static string curMsg = "Stopped";
+            public void StartServer()
+            {
+                try
+                {
+                    curMsg = "Starting...";
+                    sock.Listen(100);
+
+                    curMsg = "Running and waiting to receive file.";
+                    Socket clientSock = sock.Accept();
+
+                    byte[] clientData = new byte[1024 * 5000];
+
+                    int receivedBytesLen = clientSock.Receive(clientData);
+                    curMsg = "Receiving data...";
+
+                    int fileNameLen = BitConverter.ToInt32(clientData, 0);
+                    string fileName = Encoding.ASCII.GetString(clientData, 4, fileNameLen);
+
+                    BinaryWriter bWrite = new BinaryWriter(File.Open(receivedPath + "/" + fileName, FileMode.Append)); ;
+                    bWrite.Write(clientData, 4 + fileNameLen, receivedBytesLen - 4 - fileNameLen);
+
+                    curMsg = "Saving file...";
+
+                    bWrite.Close();
+                    clientSock.Close();
+                    curMsg = "Reeived & Saved file; Server Stopped.";
+                }
+                catch (Exception ex)
+                {
+                    curMsg = "File Receving error.";
+                }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -25,7 +25,6 @@ D:\3.HocKy7\3.LapTrinhTrucQuan\AppLanChat\applanchat\LanChat_Sang_Thien\Client\o
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\bin\Debug\Client.exe.config
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\bin\Debug\Client.exe
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\bin\Debug\Client.pdb
-C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\obj\Debug\Client.csprojAssemblyReference.cache
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\obj\Debug\Client.LoginForm.resources
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\obj\Debug\Client.PrivateChatForm.resources
 C:\Users\Phan Minh Sang\Desktop\Lan Chat\applanchat\LanChat_Sang_Thien\Client\obj\Debug\Client.Properties.Resources.resources

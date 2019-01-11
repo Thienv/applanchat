@@ -41,6 +41,9 @@ namespace Server
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtReceive = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,9 +108,9 @@ namespace Server
             this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInput.Location = new System.Drawing.Point(179, 206);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(348, 20);
+            this.txtInput.Size = new System.Drawing.Size(258, 20);
             this.txtInput.TabIndex = 2;
-            this.txtInput.Text = "Admin says: Hey";
+            this.txtInput.Text = "Admin says: Hello";
             this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
@@ -134,11 +137,30 @@ namespace Server
             this.txtReceive.Text = "";
             this.txtReceive.TextChanged += new System.EventHandler(this.txtReceive_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(452, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "File";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 239);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtReceive);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtInput);
@@ -165,6 +187,9 @@ namespace Server
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.RichTextBox txtReceive;
         public System.Windows.Forms.ListView clientList;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{0FFFF53D-0A49-492B-82E5-4333F7ED1364}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Client", "Setup Client\Setup Client\Setup Client.vdproj", "{CD7CCABB-B4C4-4FE1-B1D1-4A6DA3BE3497}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Server", "Setup Server\Setup Server\Setup Server.vdproj", "{71D22DCB-D9EA-406F-A38F-72EA1947299D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,10 @@ Global
 		{0FFFF53D-0A49-492B-82E5-4333F7ED1364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FFFF53D-0A49-492B-82E5-4333F7ED1364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FFFF53D-0A49-492B-82E5-4333F7ED1364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7CCABB-B4C4-4FE1-B1D1-4A6DA3BE3497}.Debug|Any CPU.ActiveCfg = Debug
+		{CD7CCABB-B4C4-4FE1-B1D1-4A6DA3BE3497}.Release|Any CPU.ActiveCfg = Release
+		{71D22DCB-D9EA-406F-A38F-72EA1947299D}.Debug|Any CPU.ActiveCfg = Debug
+		{71D22DCB-D9EA-406F-A38F-72EA1947299D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

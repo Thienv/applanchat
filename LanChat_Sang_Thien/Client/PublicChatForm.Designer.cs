@@ -30,22 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtReceive = new System.Windows.Forms.RichTextBox();
             this.userList = new System.Windows.Forms.ListBox();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.privateChat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtInput = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(611, 392);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(294, 324);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 44);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "File";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtReceive
             // 
@@ -93,9 +109,9 @@
             // 
             this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(350, 336);
+            this.btnSend.Location = new System.Drawing.Point(376, 336);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(91, 44);
+            this.btnSend.Size = new System.Drawing.Size(65, 44);
             this.btnSend.TabIndex = 7;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -107,11 +123,24 @@
             this.txtInput.Location = new System.Drawing.Point(58, 336);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(286, 44);
+            this.txtInput.Size = new System.Drawing.Size(242, 44);
             this.txtInput.TabIndex = 6;
             this.txtInput.Click += new System.EventHandler(this.privateChat_Click);
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
             this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(185, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
             // 
             // PublicChatForm
             // 
@@ -126,6 +155,8 @@
             this.Name = "PublicChatForm";
             this.Text = "Public Chat";
             this.Load += new System.EventHandler(this.PublicChatForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,5 +172,8 @@
         private System.Windows.Forms.ToolStripMenuItem privateChat;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }
